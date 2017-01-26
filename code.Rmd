@@ -1,0 +1,12 @@
+```{r}
+bridges.data=read.table("D:/My World/Study/wisconsin/479/2015del/AK15.txt",sep=",",header=TRUE)
+
+bridges.data$PLACE_CODE_004
+bridges.data$DECK_COND_058
+bridges.data$SUPERSTRUCTURE_COND_059
+bridges.data$SUBSTRUCTURE_COND_060
+bridges.data$CHANNEL_COND_061
+bridges.data$CULVERT_COND_062
+bridges.data$YEAR_ADT_030
+```
+
