@@ -1,12 +1,19 @@
 ```{r}
-bridges.data=read.table("D:/My World/Study/wisconsin/479/2015del/AK15.txt",sep=",",header=TRUE)
+bridges.data=read.table("D:/My World/Study/wisconsin/479/2015del/WI15.txt",sep=",",header=TRUE)
+write.csv(x=bridges.data,file="bridgesdata.csv")
+bridges.data$STATE_CODE_001
+bridges.data$COUNTY_CODE_003
 
-bridges.data$PLACE_CODE_004
 bridges.data$DECK_COND_058
 bridges.data$SUPERSTRUCTURE_COND_059
 bridges.data$SUBSTRUCTURE_COND_060
 bridges.data$CHANNEL_COND_061
 bridges.data$CULVERT_COND_062
 bridges.data$YEAR_ADT_030
+bridges.data$yea
+result.WI.data=data.frame(bridges.data$STATE_CODE_001,bridges.data$COUNTY_CODE_003,bridges.data$PLACE_CODE_004, bridges.data$YEAR_BUILT_027,bridges.data$YEAR_ADT_030,bridges.data$YEAR_OF_IMP_097,bridges.data$YEAR_RECONSTRUCTED_106,bridges.data$YEAR_OF_FUTURE_ADT_115, bridges.data$DECK_COND_058,bridges.data$SUPERSTRUCTURE_COND_059,bridges.data$SUBSTRUCTURE_COND_060,bridges.data$CHANNEL_COND_061,bridges.data$CULVERT_COND_062,bridges.data$LOCATION_009,bridges.data$FACILITY_CARRIED_007,bridges.data$STRUCTURE_NUMBER_008)
+names(result.WI.data)=c("State Code","County Code(FIPS Code)","Place Code","Year Built","Year of Average Daily Traffic","Year of Improvement Cost Estimate","Year Reconstructed","Year of Future Average Daily Traffic","Deck","Superstructure","Substructure","Channel and Channel Protection","Culverts","Location","Facility Carried","Structure Number")
+result.WI.data$Year=rep(2015,7911)
+write.csv(x=result.WI.data,file="WI2015.csv")
 ```
 
