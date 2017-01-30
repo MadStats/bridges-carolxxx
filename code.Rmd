@@ -1,0 +1,24 @@
+#WI's bridges data
+
+```{r}
+WI.bridges.data=read.table("D:/My World/Study/wisconsin/479/2015del/WI15.txt",sep=",",header=TRUE)
+write.csv(x=WI.bridges.data,file="WI.bridgesdata.csv")
+
+result.WI.data=data.frame(WI.bridges.data$STATE_CODE_001,WI.bridges.data$COUNTY_CODE_003,WI.bridges.data$PLACE_CODE_004, WI.bridges.data$YEAR_BUILT_027,WI.bridges.data$YEAR_ADT_030,WI.bridges.data$YEAR_OF_IMP_097,WI.bridges.data$YEAR_RECONSTRUCTED_106,WI.bridges.data$YEAR_OF_FUTURE_ADT_115, WI.bridges.data$DECK_COND_058,WI.bridges.data$SUPERSTRUCTURE_COND_059,WI.bridges.data$SUBSTRUCTURE_COND_060,WI.bridges.data$CHANNEL_COND_061,WI.bridges.data$CULVERT_COND_062,WI.bridges.data$LOCATION_009,WI.bridges.data$FACILITY_CARRIED_007,WI.bridges.data$STRUCTURE_NUMBER_008)
+names(result.WI.data)=c("State Code","County Code(FIPS Code)","Place Code","Year Built","Year of Average Daily Traffic","Year of Improvement Cost Estimate","Year Reconstructed","Year of Future Average Daily Traffic","Deck","Superstructure","Substructure","Channel and Channel Protection","Culverts","Location","Facility Carried","Structure Number")
+result.WI.data$Year=rep(2015,7911)
+write.csv(x=result.WI.data,file="WI2015.csv")
+```
+
+#All states' bridges data. Because the result file is too large ,I upload files directly
+
+```{r}
+bridges.data=read.table("D:/My World/Study/wisconsin/479/2015allstatesallrecsdel/slubkin_992016-20160126135704.txt",sep=",",header=TRUE,blank.lines.skip = FALSE)
+write.csv(x=bridges.data,file="bridgesdata.csv")
+
+result.data=data.frame(bridges.data$STATE_CODE_001,bridges.data$COUNTY_CODE_003,bridges.data$PLACE_CODE_004, bridges.data$YEAR_BUILT_027,bridges.data$YEAR_ADT_030,bridges.data$YEAR_OF_IMP_097,bridges.data$YEAR_RECONSTRUCTED_106,bridges.data$YEAR_OF_FUTURE_ADT_115, bridges.data$DECK_COND_058,bridges.data$SUPERSTRUCTURE_COND_059,bridges.data$SUBSTRUCTURE_COND_060,bridges.data$CHANNEL_COND_061,bridges.data$CULVERT_COND_062,bridges.data$LOCATION_009,bridges.data$FACILITY_CARRIED_007,bridges.data$STRUCTURE_NUMBER_008)
+names(result.data)=c("State Code","County Code(FIPS Code)","Place Code","Year Built","Year of Average Daily Traffic","Year of Improvement Cost Estimate","Year Reconstructed","Year of Future Average Daily Traffic","Deck","Superstructure","Substructure","Channel and Channel Protection","Culverts","Location","Facility Carried","Structure Number")
+result.data$Year=rep(2015,305830)
+write.csv(x=result.data,file="ALLSTATES2015.csv")
+```
+
